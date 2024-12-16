@@ -9,6 +9,9 @@ import { AppProvider } from "@/components/providers"
 export const metadata: Metadata = {
   title: "CareMedi Web View ",
   description: "CareMedi Web View Project",
+  icons: {
+    icon: "/favicon.svg", // icon 변경
+  },
 }
 interface LayoutProps {
   children: React.ReactNode
