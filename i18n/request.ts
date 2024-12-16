@@ -10,7 +10,6 @@ export default getRequestConfig(async ({ requestLocale }) => {
   if (!locale || !routing.locales.includes(locale as never)) {
     locale = routing.defaultLocale
   }
-  console.log("🚀 ~@@@@@@@@@@@@@@@@@@ getRequestConfig ~ locale:", locale)
   return {
     locale,
   }

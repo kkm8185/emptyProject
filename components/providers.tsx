@@ -25,11 +25,11 @@ export function AppProvider({ children }: Props) {
       <AppProgressBar height="2px" color="#C09A61" options={{ showSpinner: false }} shallowRouting />
       <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
       <Toaster richColors />
-      <ScrollToTop
+      {/* <ScrollToTop
         className="!z-50 flex items-center justify-center"
         smooth
-        // component={<RiArrowUpCircleFill size={30} className="text-caremedi-primary-500" />}
-      />
+        component={<RiArrowUpCircleFill size={30} className="text-caremedi-primary-500" />}
+      /> */}
 
       <TailwindIndicator />
     </TooltipProvider>

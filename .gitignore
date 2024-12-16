@@ -2,7 +2,9 @@
 
 # dependencies
 /node_modules
+/.vscode
 /.pnp
+/clean
 .pnp.*
 .yarn/*
 !.yarn/patches

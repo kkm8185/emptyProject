@@ -8,7 +8,7 @@ type Props = {
 const NoData = ({ title }: Props) => {
   return (
     <div className="mt-36 text-center">
-      <span className={cn("text-body4Medium text-caremedi-primary-500")}>{title}</span>
+      <span className="text-body4Medium text-caremedi-base-500">{title}</span>
     </div>
   )
 }

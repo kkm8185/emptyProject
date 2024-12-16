@@ -9,7 +9,6 @@ const Switch = React.forwardRef<
   React.ElementRef<typeof SwitchPrimitives.Root>,
   React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root>
 >(({ className, ...props }, ref) => {
-  console.log("🚀 ~ props:", props)
   const [isChecked, setIsChecked] = React.useState(false) // 스위치 상태 관리
 
   const handleToggle = () => {

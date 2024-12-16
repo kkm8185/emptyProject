@@ -1,0 +1,1 @@
+export { useFaqStore } from "./useFaqStore"

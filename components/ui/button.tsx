@@ -2,7 +2,7 @@ import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
 
-import { buttonCompoundVariants } from "@/lib/constants"
+import { BUTTON_COMPOUND_VARIANTS } from "@/lib/constants"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
@@ -14,23 +14,23 @@ const buttonVariants = cva(
        */
       variant: {
         default:
-          "bg-caremedi-primary-600 hover:bg-caremedi-primary-100 !text-caremedi-gray-100 hover:!text-caremedi-primary-400",
+          "bg-caremedi-primary-600 !text-caremedi-gray-100 hover:bg-caremedi-primary-100 hover:!text-caremedi-primary-400",
         defaultTint:
-          "bg-caremedi-primary-200 hover:bg-caremedi-secondary-100 !text-caremedi-primary-600 hover:!text-caremedi-primary-400",
+          "bg-caremedi-primary-200 !text-caremedi-primary-600 hover:bg-caremedi-secondary-100 hover:!text-caremedi-primary-400",
         defaultGray:
-          "bg-caremedi-gray-1000 hover:bg-caremedi-gray-600 !text-caremedi-gray-100 hover:!text-caremedi-gray-100",
+          "bg-caremedi-gray-1000 !text-caremedi-gray-100 hover:bg-caremedi-gray-600 hover:!text-caremedi-gray-100",
         ghost: "text-caremedi-primary-600 hover:text-caremedi-primary-300",
         outline:
-          "border-caremedi-primary-600 hover:bg-caremedi-primary-100 hover:border-caremedi-primary-300 !text-caremedi-primary-600 hover:!text-caremedi-primary-300 border-2",
+          "border-2 border-caremedi-primary-600 !text-caremedi-primary-600 hover:border-caremedi-primary-300 hover:bg-caremedi-primary-100 hover:!text-caremedi-primary-300",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {
-        default: "text-body3Medium h-12 w-[158px] py-3",
-        sm: "text-body5Medium h-9 min-w-[70px] px-2 py-[9px]",
-        lg: "text-body3Medium h-[54px] w-[328px] py-[15px]",
-        icon: "h-10 w-10",
+        default: "h-12 w-[158px] py-3 text-body3Medium",
+        sm: "h-9 min-w-[70px] px-2 py-[9px] text-body5Medium",
+        lg: "h-[54px] w-[328px] py-[15px] text-body3Medium",
+        icon: "size-10",
       },
       disabled: {
         true: "cursor-not-allowed",
@@ -40,7 +40,7 @@ const buttonVariants = cva(
       variant: "default",
       size: "default",
     },
-    compoundVariants: buttonCompoundVariants,
+    compoundVariants: BUTTON_COMPOUND_VARIANTS,
   }
 )
 

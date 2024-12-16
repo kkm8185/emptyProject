@@ -16,16 +16,16 @@ type Props = {
 
 export const apiLoggerMiddleware = ({ type, url, location, method, headers, status, data }: Props) => {
   if (type === "Request") {
-    console.group(`Http ${type} / method:${method}`)
-    infoLog("url : ", url)
-    infoLog("location : ", location)
-    infoLog("headers : ", headers)
-    infoLog("data : ", data)
+    // console.group(`Http ${type} / method:${method}`)
+    // infoLog("url : ", url)
+    // infoLog("location : ", location)
+    // infoLog("headers : ", headers)
+    // infoLog("data : ", data)
   } else {
-    console.group(`Http ${type} / method:${method} status:${status}`)
-    infoLog("url : ", url)
-    infoLog("location : ", location)
-    infoLog("data : ", data)
+    // console.group(`Http ${type} / method:${method} status:${status}`)
+    // infoLog("url : ", url)
+    // infoLog("location : ", location)
+    // infoLog("data : ", data)
   }
-  console.groupEnd()
+  // console.groupEnd()
 }

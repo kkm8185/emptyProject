@@ -4,7 +4,7 @@ import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from "axios"
 import { IS_DEV } from "./constants"
 
 const Axios = axios.create({
-  baseURL: process.env.CAREMEDI_API_URL + "/api",
+  baseURL: process.env.NEXT_PUBLIC_CAREMEDI_API_URL + "/app",
   timeout: 10000,
 })
 

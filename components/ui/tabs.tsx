@@ -22,10 +22,13 @@ TabsList.displayName = TabsPrimitive.List.displayName
 const TabsTrigger = React.forwardRef<
   React.ElementRef<typeof TabsPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger>
->(({ ...props }, ref) => (
+>(({ className, ...props }, ref) => (
   <TabsPrimitive.Trigger
     ref={ref}
-    className="data-[state=active]:bg-gcaremedi-gray-100 inline-flex items-center justify-center whitespace-nowrap rounded-[4px] bg-caremedi-primary-100 px-4 py-2 text-body5Medium font-medium text-caremedi-primary-400 ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:border data-[state=active]:border-caremedi-primary-600 data-[state=active]:bg-caremedi-gray-100  data-[state=active]:text-caremedi-primary-600"
+    className={cn(
+      "data-[state=active]:bg-gcaremedi-gray-100 inline-flex items-center justify-center whitespace-nowrap rounded-[4px] border border-transparent bg-caremedi-primary-100 px-4 py-2 text-body5Medium font-medium text-caremedi-primary-400 ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none  disabled:opacity-50 data-[state=active]:border data-[state=active]:border-caremedi-primary-600 data-[state=active]:bg-caremedi-gray-100 data-[state=active]:text-caremedi-primary-600",
+      className
+    )}
     {...props}
   />
 ))

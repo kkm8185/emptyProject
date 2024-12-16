@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useState } from "react"
 import Image from "next/image"
 
@@ -9,7 +11,7 @@ import { Input } from "./ui/input"
 const CareMediSearch = () => {
   const [inputValue, setInputValue] = useState("")
   const [inputHelp, setInputHelp] = useState("잘못된 형식의 이메일 주소 입니다.")
-  const [visibleClaerButton, setVisibleClearButton] = useState<boolean>(false)
+  const [visibleClearButton, setVisibleClearButton] = useState<boolean>(false)
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value)
     if (e.target.value === "") {
@@ -33,7 +35,7 @@ const CareMediSearch = () => {
 
   return (
     <div className="flex flex-col ">
-      <div className={cn("relative text-start")}>
+      <div className="relative text-start">
         <Input
           type="text"
           value={inputValue}
@@ -49,11 +51,11 @@ const CareMediSearch = () => {
         />
         <div className="absolute right-2 top-1/2 -translate-y-1/2">
           <div className="flex flex-row gap-1">
-            {visibleClaerButton && (
+            {visibleClearButton && (
               <Button
                 variant="outline"
                 size="icon"
-                className={cn("size-9 border-none hover:bg-transparent")}
+                className="size-9 border-none hover:bg-transparent"
                 onClick={handleClear}
               >
                 <Image
@@ -67,7 +69,7 @@ const CareMediSearch = () => {
             <Button
               variant="outline"
               size="icon"
-              className={cn("size-9 border-none hover:bg-transparent")}
+              className="size-9 border-none hover:bg-transparent"
               onClick={handleClear}
             >
               <Image
@@ -82,9 +84,7 @@ const CareMediSearch = () => {
         {/* 입력값이 있을 때만 초기화 버튼 표시 */}
       </div>
       {/* 오류 or 성공 메시지 */}
-      {inputHelp && (
-        <span className="self-start px-3 py-2 text-body5Medium text-caremedi-gray-600">{inputHelp}</span>
-      )}{" "}
+      {inputHelp && <span className="self-start px-3 py-2 text-body5Medium text-caremedi-gray-600">{inputHelp}</span>}
     </div>
   )
 }

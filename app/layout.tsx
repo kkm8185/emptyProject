@@ -1,10 +1,9 @@
 import type { Metadata } from "next"
 import { pretendard } from "@/fonts"
-import { NextIntlClientProvider } from "next-intl"
 
 import "./globals.css"
 
-import { cn, getMessages } from "@/lib/utils"
+import { cn } from "@/lib/utils"
 import { AppProvider } from "@/components/providers"
 
 export const metadata: Metadata = {

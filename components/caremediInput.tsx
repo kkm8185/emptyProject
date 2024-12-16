@@ -1,3 +1,5 @@
+"use client"
+
 import React, { useState } from "react"
 import Image from "next/image"
 
@@ -9,25 +11,51 @@ import { Input } from "./ui/input"
 type Props = {
   title: string
 }
+type MessageProps = {
+  message: string
+  type: "hint" | "error" | "success"
+  title?: string
+}
+const Message = ({ message, type, title }: MessageProps) => {
+  if (!message) return null
+
+  const messageClasses = {
+    hint: "text-caremedi-gray-600",
+    error: "text-caremedi-alert-danger",
+    success: "text-caremedi-primary-600",
+  }
+
+  return (
+    <span className={cnJoin("self-start px-2 py-2 text-body5Medium", messageClasses[type], title && "!px-0")}>
+      {message}
+    </span>
+  )
+}
 const CareMediInput = ({ title }: Props) => {
   const [inputValue, setInputValue] = useState("")
-  const [inputError, setInputError] = useState("잘못된 형식의 이메일 주2소 입니다.")
-  const [inputSuccess, setInputSuccess] = useState("사용할 수 있는 이메일 주2소입니다.")
-  const [inputHint, setInputHint] = useState("사용할 수 있는 힌트")
+  const [inputMessage, setInputMessage] = useState({
+    error: "잘못된 형식의 이메일 주소",
+    success: "성공적인 이메일 주소",
+    hint: "사용할 수 있는 힌트",
+  })
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value)
     if (e.target.value === "") {
       //   setInputError("입력 필드는 비워둘 수 없습니다.")
     } else {
-      setInputError("")
-      setInputSuccess("")
-      setInputHint("")
+      setInputMessage({ ...inputMessage, error: "", success: "", hint: "" })
     }
   }
 
   const handleClear = () => {
+    setInputMessage({ ...inputMessage, error: "", success: "", hint: "" })
     setInputValue("")
-    setInputError("")
+  }
+  const getInputClassName = () => {
+    if (inputMessage.success) return "border-caremedi-primary-600"
+    if (inputMessage.error) return "border-caremedi-alert-danger"
+    if (inputValue) return "border-caremedi-gray-700"
+    return "focus-visible:border-caremedi-gray-500"
   }
   return (
     <div className="flex flex-col ">
@@ -38,15 +66,8 @@ const CareMediInput = ({ title }: Props) => {
           value={inputValue}
           onChange={handleChange}
           placeholder="입력하세요"
-          className={cn(
-            "relative pr-10 ",
-            inputSuccess && "border-caremedi-primary-600",
-            inputError && "border-caremedi-alert-danger",
-            inputValue && "border-caremedi-gray-700",
-            !inputValue && "focus-visible:border-caremedi-gray-500"
-          )}
+          className={cn("relative pr-10 ", getInputClassName())}
         />
-        {/* 오류 or 성공 메시지 */}
         <div className={cn("absolute right-2 top-1/2 -translate-y-1/2", title && "top-[65%]")}>
           <Button
             variant="outline"
@@ -63,21 +84,9 @@ const CareMediInput = ({ title }: Props) => {
           </Button>
         </div>
       </div>
-      {inputHint && (
-        <span className={cnJoin("self-start px-3 py-2 text-body5Medium text-caremedi-gray-600", title && "!px-0")}>
-          {inputHint}
-        </span>
-      )}
-      {inputError && (
-        <span className={cnJoin("self-start px-3 py-2 text-body5Medium text-caremedi-alert-danger", title && "!px-0")}>
-          {inputError}
-        </span>
-      )}
-      {inputSuccess && (
-        <span className={cnJoin("self-start px-3 py-2 text-body5Medium text-caremedi-primary-600", title && "!px-0")}>
-          {inputSuccess}
-        </span>
-      )}
+      <Message message={inputMessage.hint} type="hint" title={title} />
+      <Message message={inputMessage.error} type="error" title={title} />
+      <Message message={inputMessage.success} type="success" title={title} />
     </div>
   )
 }
