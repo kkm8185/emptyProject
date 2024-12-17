@@ -1,9 +1,9 @@
 type VariantType = "default" | "defaultTint" | "defaultGray" | "destructive" | "outline" | "ghost" | "link"
 type SizeType = "default" | "sm" | "lg" | "icon"
-
+/** 현재 개발모드 여부 */
 export const IS_DEV = process.env.NODE_ENV !== "production"
-
-export const BUTTON_COMPOUND_VARIANTS : {
+/** 버튼에 대한 상수 */
+export const BUTTON_COMPOUND_VARIANTS: {
   variant: VariantType
   size?: SizeType // Ensure size is a single string
   disabled?: boolean
@@ -105,7 +105,7 @@ export const BUTTON_COMPOUND_VARIANTS : {
     className: "text-body5Medium !text-caremedi-gray-400 bg-caremedi-gray-200 border-caremedi-gray-400 border ", // disabled 상태의 스타일
   },
 ]
-
+/** 사용자 폰트 class명 상수 */
 export const CUSTOM_FONT_TAILWIND_CLASSES = [
   "text-h1Bold",
   "text-h1Regular",

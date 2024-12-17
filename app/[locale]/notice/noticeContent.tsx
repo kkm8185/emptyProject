@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { SearchParams } from "@/types"
 import { useInView } from "react-intersection-observer"
 
@@ -12,6 +12,7 @@ import AccordionSkeleton from "@/components/accordionSkeleton"
 import MiniLoader from "@/components/icons/mini-loader"
 import NoData from "@/components/noData"
 import OfflineReload from "@/components/offlineReload"
+import ScrollToTopButton from "@/components/scrollToTopButton"
 
 type Props = {
   locale: string
@@ -19,6 +20,8 @@ type Props = {
 }
 const NoticeContent = ({ locale, searchParams }: Props) => {
   const [isServerOffline, setIsServerOffline] = useState(false)
+  const scrollAreaRef = useRef<HTMLDivElement>(null) // ScrollArea를 위한 ref
+
   /**
    * data : Fetch 함수를 통해 가져온 데이터
    * error : 오류
@@ -71,7 +74,7 @@ const NoticeContent = ({ locale, searchParams }: Props) => {
         <NoData title="등록된 공지사항이 없습니다." />
       ) : (
         /** 데이터가 있을 경우 */
-        <ScrollArea className="h-full">
+        <ScrollArea className="h-full" ref={scrollAreaRef}>
           <Accordion type="single" collapsible className="w-full px-4">
             {data?.pages.map((page) =>
               page.response.notices.map((notice) => {
@@ -107,6 +110,7 @@ const NoticeContent = ({ locale, searchParams }: Props) => {
             ) : null}
           </div>
           <ScrollBar orientation="vertical" />
+          <ScrollToTopButton scrollAreaRef={scrollAreaRef} />
         </ScrollArea>
       )}
     </div>

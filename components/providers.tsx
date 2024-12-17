@@ -20,7 +20,6 @@ export function AppProvider({ children }: Props) {
   const [queryClient] = React.useState(() => new QueryClient())
 
   return (
-    //Fix issue when adding progressbar in layout causes an error : deopted into client-side rendering
     <TooltipProvider>
       <AppProgressBar height="2px" color="#C09A61" options={{ showSpinner: false }} shallowRouting />
       <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
