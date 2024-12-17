@@ -12,11 +12,8 @@ const AccordionSkeleton = ({ length = 10 }: Props) => {
       {Array.from({ length: length }, (_, index) => (
         <AccordionItem key={index} value={"item" + index}>
           <AccordionTrigger>
-            <Skeleton key={index} className="h-7 w-[250px] lg:w-[550px]" /> {/* 제목 Skeleton */}
+            <Skeleton key={index} className="h-[38px] w-[250px] lg:w-[550px]" /> {/* 제목 Skeleton */}
           </AccordionTrigger>
-          <AccordionContent>
-            <Skeleton key={index} className="h-7 w-[250px] lg:w-[550px]" /> {/* 내용 Skeleton */}
-          </AccordionContent>
         </AccordionItem>
       ))}
     </Accordion>
