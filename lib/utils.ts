@@ -135,3 +135,23 @@ const messages: Record<string, typeof enLang> = {
 export async function getMessages(locale: string) {
   return messages[locale] || messages.en // 기본 locale 값은 en
 }
+
+type DataType = Record<string, any>
+/**
+ * 번역된 Object로 수정
+ * @param data - string의 키, 모든 타입의 값 객체 or null or undefined
+ * @param t - next-intl의 useTranslations값
+ * @returns - {
+ *  label - 번역된 key값
+ *  value - value값
+ * }
+ *
+ */
+export const transformDataToRows = (data: DataType | null | undefined, t: (key: string) => string) => {
+  return data
+    ? Object.entries(data).map(([key, value]) => ({
+        label: t(key), // i18n 다국어 처리
+        value,
+      }))
+    : []
+}

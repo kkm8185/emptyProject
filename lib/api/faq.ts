@@ -27,6 +27,7 @@ export interface IGetFaqListResponse {
   id: string
   dateTime: string
   response: IFaqList
+  error?: IFaqError
 }
 
 interface ICategory {
@@ -37,6 +38,7 @@ export interface IGetCategoryListResponse {
   id: string
   dateTime: string
   response: ICategory[]
+  error?: IFaqError
 }
 /**
  * FAQ 조회 API

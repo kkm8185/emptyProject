@@ -1,16 +1,15 @@
 "use client"
 
 import * as React from "react"
-import { RiArrowUpCircleFill } from "@remixicon/react"
+// import { RiArrowUpCircleFill } from "@remixicon/react"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { AppProgressBar } from "next-nprogress-bar"
-import ScrollToTop from "react-scroll-to-top"
+
+// import ScrollToTop from "react-scroll-to-top"
 
 import { Toaster } from "@/components/ui/sonner"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { TailwindIndicator } from "@/components/tailwindIndicator"
-
-// import { ScrollToTop } from "@/components/shared/scroll-top"
 
 interface Props {
   children?: React.ReactNode

@@ -1,6 +1,6 @@
 import React from "react"
 
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion"
+import { Accordion, AccordionItem, AccordionTrigger } from "./ui/accordion"
 import { Skeleton } from "./ui/skeleton"
 
 type Props = {
