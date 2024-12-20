@@ -5,7 +5,7 @@ type IconProps = React.HTMLAttributes<SVGElement>
 export default function MiniLoader({ className, ...rest }: IconProps) {
   return (
     <svg
-      className={cn("-ml-1 mr-3 h-5 w-5 animate-spin text-foreground", className)}
+      className={cn("-ml-1 mr-3 size-5 animate-spin text-foreground", className)}
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"

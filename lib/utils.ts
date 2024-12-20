@@ -155,3 +155,19 @@ export const transformDataToRows = (data: DataType | null | undefined, t: (key: 
       }))
     : []
 }
+
+export const checkContentType = (data: string) => {
+  const parser = new DOMParser()
+  const doc = parser.parseFromString(data, "text/html")
+  let type = "text"
+  if (doc.body.children.length > 0) return "markUp"
+  try {
+    JSON.parse(data)
+    type = "json"
+  } catch {
+    type = "text"
+  } finally {
+    console.log("tttttttyyyyyyyyypeeeeeeeeeee", data, type)
+  }
+  return type
+}

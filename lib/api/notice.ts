@@ -36,7 +36,24 @@ export interface IGetNoticeListResponse {
   response: INoticeList
   error?: INoticeError
 }
-
+interface IPostNoticeResponseData {
+  appNoticeId: string
+}
+interface IPostNoticeResponse {
+  id: string
+  dateTime: string
+  response: IPostNoticeResponseData
+  error?: INoticeError
+}
+export interface IPostNotice {
+  title: string
+  category: string
+  subject: string
+  content: string
+  writer: string
+  languageType: number
+  Authorization?: string
+}
 /**
  * 공지사항 조회 API
  *
@@ -54,4 +71,21 @@ async function getNotices(query: string) {
   }
 }
 
-export { getNotices }
+async function postNotice(param: IPostNotice) {
+  try {
+    const authValue = param.Authorization
+    delete param.Authorization
+    const response = await Axios.post<IPostNoticeResponse>(`/notice/reg`, param, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: authValue,
+      },
+    })
+
+    return response.data
+  } catch (error) {
+    console.error("Error fetching notice:", error)
+    throw error
+  }
+}
+export { getNotices, postNotice }

@@ -46,7 +46,7 @@ const ScrollToTopButton = ({ scrollAreaRef }: Props) => {
       {!isAtTop && ( // Top이 아닐 경우에만 버튼 제공
         <Button
           onClick={scrollToTop}
-          className="fixed bottom-4 right-4 !z-50 flex size-7 items-center justify-center rounded-full bg-caremedi-gray-100 [&_svg]:size-7"
+          className="fixed bottom-4 right-4 !z-50 flex size-7 items-center justify-center rounded-full bg-caremedi-gray-100 [&_svg]:size-8"
         >
           <RiArrowUpCircleFill size={32} className="text-caremedi-primary-500" />
         </Button>

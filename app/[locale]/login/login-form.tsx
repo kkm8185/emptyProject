@@ -92,7 +92,7 @@ export function LoginForm() {
                     <Input
                       placeholder="admin@caremedi.com"
                       {...field}
-                      className="@2xs:text-base pl-10 text-sm md:text-base"
+                      className="pl-10 text-sm @2xs:text-base md:text-base"
                     />
                   </div>
                 </FormControl>
@@ -113,7 +113,7 @@ export function LoginForm() {
                       placeholder="• • • • • • • • • • "
                       {...field}
                       type="password"
-                      className="@2xs:text-base pl-10 text-sm md:text-base"
+                      className="pl-10 text-sm @2xs:text-base md:text-base"
                     />
                   </div>
                 </FormControl>

@@ -19,7 +19,7 @@ interface LayoutProps {
 export default async function RootLayout({ children }: LayoutProps) {
   return (
     <html lang="en">
-      <body className={cn(pretendard.variable, "min-h-[100svh] font-pretendard antialiased")}>
+      <body className={cn(pretendard.variable, "min-h-svh font-pretendard antialiased")}>
         <AppProvider>{children}</AppProvider>
       </body>
     </html>

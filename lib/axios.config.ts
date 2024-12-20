@@ -14,6 +14,7 @@ const Axios = axios.create({
 Axios.interceptors.request.use(
   async <T extends AxiosRequestConfig>(config: T): Promise<T> => {
     config.headers = {
+      ...config.headers,
       "Content-Type": "application/json",
       "Access-Control-Allow-Origin": "*",
     }
