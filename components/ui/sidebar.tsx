@@ -15,7 +15,7 @@ import { Skeleton } from "@/components/ui/skeleton"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 
 const SIDEBAR_COOKIE_NAME = "sidebar:state"
-const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7
+const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7 // sidebar 쿠키 유효 기간 ( 60초 * 60분 * 24시간 * 7일 ) -> 7일
 const SIDEBAR_WIDTH = "16rem"
 const SIDEBAR_WIDTH_MOBILE = "18rem"
 const SIDEBAR_WIDTH_ICON = "3rem"
