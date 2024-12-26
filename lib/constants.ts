@@ -141,3 +141,13 @@ export const CUSTOM_FONT_TAILWIND_CLASSES = [
   "text-captionMedium",
   "text-captionRegular",
 ]
+export const FONT_SIZE_OPTIONS = [
+  { label: "10px", value: "10" },
+  { label: "12px", value: "12" },
+  { label: "14px", value: "14" },
+  { label: "16px", value: "16" },
+  { label: "18px", value: "18" },
+  { label: "20px", value: "20" },
+  { label: "22px", value: "22" },
+  { label: "24px", value: "24" },
+]

@@ -10,6 +10,8 @@ const config = {
     "@next/next/no-html-link-for-pages": "off",
     "react/jsx-key": "off",
     "tailwindcss/no-custom-classname": "off",
+    "@typescript-eslint/no-explicit-any": "warn",
+
     // "tailwindcss/classnames-order": "error"
   },
   settings: {
